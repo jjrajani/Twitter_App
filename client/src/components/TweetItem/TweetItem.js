@@ -11,12 +11,8 @@ class TweetItem extends Component {
       profile_background_color
     } = this.props.tweet.user;
     return profile_background_image_url
-      ? {
-          backgroundImage: `url(${profile_background_image_url})`
-        }
-      : {
-          backgroundColor: `#${profile_background_color}`
-        };
+      ? { backgroundImage: `url(${profile_background_image_url})` }
+      : { backgroundColor: `#${profile_background_color}` };
   };
   render() {
     const { profile_image_url, screen_name, url } = this.props.tweet.user;
