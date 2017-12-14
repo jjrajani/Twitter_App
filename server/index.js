@@ -8,6 +8,9 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
+/* Twitter Search Route */
+require('./routes/twitterSearchRoute')(app);
+
 if (process.env.NODE_ENV === 'production') {
   // Express server assets
   app.use(express.static('client/build'));
@@ -21,7 +24,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('/', (req, res) => {
-  console.log('twitter app base', req.query);
   res.send('Twitter API Integration');
 });
 
