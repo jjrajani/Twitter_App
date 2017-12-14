@@ -1,4 +1,5 @@
+import AuthButton from './AuthButton';
 import SearchBar from './SearchBar';
 import TwitterFeed from './TwitterFeed';
 
-export { SearchBar, TwitterFeed };
+export { AuthButton, SearchBar, TwitterFeed };

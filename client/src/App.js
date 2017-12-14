@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { SearchBar, TwitterFeed } from './components';
+import { AuthButton, SearchBar, TwitterFeed } from './components';
 import axios from 'axios';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
   searchTwitter = term => {
     this.setState({ searchTerm: term });
     console.log('searching twitter', term);
-    axios.post('/api/twitter-search', { term }).then(res => {
+    axios.get('/api/twitter-search', { term }).then(res => {
       console.log('got tweets', res);
     });
   };
@@ -19,6 +19,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <AuthButton auth={null} />
           <SearchBar onSubmit={this.searchTwitter} />
         </header>
         <TwitterFeed searchTerm={this.state.searchTerm} />
