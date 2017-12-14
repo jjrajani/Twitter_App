@@ -12,7 +12,11 @@ class AuthButton extends Component {
 }
 
 AuthButton.propTypes = {
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.oneOfType([
+    PropTypes.bool.isRequired,
+    PropTypes.object.isRequired,
+    PropTypes.string.isRequired
+  ])
 };
 
 export default AuthButton;
