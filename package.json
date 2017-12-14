@@ -26,6 +26,7 @@
   "license": "ISC",
   "dependencies": {
     "aws4": "^1.6.0",
+    "combined-stream": "^1.0.5",
     "concurrently": "^3.5.1",
     "extend": "^3.0.1",
     "forever-agent": "^0.6.1",
