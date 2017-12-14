@@ -1,0 +1,14 @@
+@keyframes pulsate {
+  0% {
+    opacity: 1;
+    transform: perspective(500px) translateZ(0px);
+  }
+  50% {
+    opacity: 0.4;
+    transform: perspective(500px) translateZ(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(500px) translateZ(0px);
+  }
+}

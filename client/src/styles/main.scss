@@ -1,11 +1,13 @@
 @import 'normalize';
 @import 'media_query';
 @import 'colors';
+@import 'animations';
 @import 'layout';
 @import 'header';
 @import 'search_bar';
 @import 'auth_button';
 @import 'twitter_feed';
+@import 'tweet_item';
 
 * {
   font-family: 'Roboto', sans-serif;

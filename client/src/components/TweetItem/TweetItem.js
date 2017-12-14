@@ -18,14 +18,14 @@ class TweetItem extends Component {
     const { profile_image_url, screen_name, url } = this.props.tweet.user;
     const { created_at, favorite_count, text } = this.props.tweet;
     return (
-      <li style={this.backgroundStyles()}>
+      <li style={this.backgroundStyles()} className="tweet list_item">
         <div className="header">
+          <img src={profile_image_url} alt="User Profile Pic" />
           <TweetHeader url={url} screenName={screen_name} />
           <p>Tweeting Since {moment(created_at).format('MMMM Do, YYYY')}</p>
           <TweetFavorite favoriteCount={favorite_count} />
         </div>
         <div className="content">
-          <img src={profile_image_url} alt="User Profile Pic" />
           <p>{text}</p>
         </div>
       </li>
