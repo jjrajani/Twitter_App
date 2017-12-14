@@ -5,7 +5,7 @@ import { fetchCurrentUser, searchTwitter } from './utils/serverCalls';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { auth: false, searchTerm: '', tweets: [] };
+    this.state = { auth: false, tweets: [] };
   }
   componentDidMount() {
     fetchCurrentUser().then(user => {
@@ -13,13 +13,9 @@ class App extends Component {
     });
   }
   searchTwitter = term => {
-    this.setCurrentSearch(term);
     searchTwitter(term).then(tweets => {
       this.setState({ tweets });
     });
-  };
-  setCurrentSearch = term => {
-    this.setState({ searchTerm: term });
   };
   render() {
     return (
@@ -29,10 +25,7 @@ class App extends Component {
           <SearchBar onSubmit={this.searchTwitter} />
           <AuthButton auth={this.state.auth} />
         </header>
-        <TwitterFeed
-          searchTerm={this.state.searchTerm}
-          tweets={this.state.tweets}
-        />
+        <TwitterFeed tweets={this.state.tweets} />
       </div>
     );
   }
