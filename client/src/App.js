@@ -6,7 +6,12 @@ import axios from 'axios';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { searchTerm: '' };
+    this.state = { auth: false, searchTerm: '' };
+  }
+  componentDidMount() {
+    axios.get('/api/current_user').then(res => {
+      this.setState({ auth: res.data });
+    });
   }
   searchTwitter = term => {
     this.setState({ searchTerm: term });
@@ -19,7 +24,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <AuthButton auth={null} />
+          <AuthButton auth={this.state.auth} />
           <SearchBar onSubmit={this.searchTwitter} />
         </header>
         <TwitterFeed searchTerm={this.state.searchTerm} />
