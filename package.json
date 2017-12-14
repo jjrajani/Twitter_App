@@ -24,6 +24,7 @@
   "author": "Jenna Rajani",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^3.5.1"
+    "concurrently": "^3.5.1",
+    "mkdirp": "^0.5.1"
   }
 }
