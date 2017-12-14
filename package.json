@@ -14,11 +14,11 @@
     "//": "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild-client":
-      "npm install --prefix client --only=dev concurrently npm install --prefix client concurrently npm run build --prefix client",
+      "concurrently \"npm install --prefix client --only=dev\" \"npm install --prefix client\" \"npm run build --prefix client\"",
     "heroku-postbuild-server":
-      "npm install --prefix server --only=dev concurrently npm install --prefix server",
+      "concurrently \"npm install --prefix server --only=dev\"  \"npm install --prefix server\"",
     "heroku-postbuild":
-      "NPM_CONFIG_PRODUCTION=false npm run heroku-postbuild-server concurrently npm run heroku-postbuild-client"
+      "concurrently \"NPM_CONFIG_PRODUCTION=false npm run heroku-postbuild-server\" \"npm run heroku-postbuild-client\""
   },
   "keywords": ["Twitter", "Search", "App"],
   "author": "Jenna Rajani",
