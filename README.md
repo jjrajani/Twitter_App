@@ -2,7 +2,7 @@ Twitter Search API Integration
 
 A basic Twitter Search App
 
-Visit the [Live Demo]()
+##### **Visit the [Live Demo](https://humdrum-twitter-app.herokuapp.com/)**
 
 To run locally:
 
