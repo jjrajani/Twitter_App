@@ -4,7 +4,7 @@ A basic Twitter Search App
 
 This app was build with React and Express.
 
-##### **Visit the [Live Demo](https://humdrum-twitter-app.herokuapp.com/)**
+##### **Visit the [Live Demo](http://humdrum-twitter-app.herokuapp.com/)**
 
 ##### To run locally:
 

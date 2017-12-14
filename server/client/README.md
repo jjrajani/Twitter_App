@@ -3,7 +3,7 @@
 A simple react app for Searching Twitter. Contains a Twitter Login and Search
 Bar. Searching provides a list of tweets matching the given search parameters.
 
-##### **Visit the [Live Demo](https://humdrum-twitter-app.herokuapp.com/)**
+##### **Visit the [Live Demo](http://humdrum-twitter-app.herokuapp.com/)**
 
 ##### To get the client running, run the following commands in your terminal:
 

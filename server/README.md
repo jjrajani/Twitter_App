@@ -3,7 +3,7 @@
 A simple express app serving a Twitter Login and connections to the Twitter
 Search API.
 
-##### **Visit the [Live Demo](https://humdrum-twitter-app.herokuapp.com/)**
+##### **Visit the [Live Demo](http://humdrum-twitter-app.herokuapp.com/)**
 
 ##### To get the server running, run the following commands in your terminal:
 
