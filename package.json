@@ -44,6 +44,7 @@
     "pinkie-promise": "^2.0.1",
     "sshpk": "^1.13.1",
     "stringstream": "0.0.5",
-    "tough-cookie": "^2.3.3"
+    "tough-cookie": "^2.3.3",
+    "xtend": "^4.0.1"
   }
 }
