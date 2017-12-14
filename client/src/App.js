@@ -2,23 +2,27 @@ import React, { Component } from 'react';
 import './App.scss';
 import { AuthButton, SearchBar, TwitterFeed } from './components';
 import axios from 'axios';
+import { fetchCurrentUser, searchTwitter } from './utils/serverCalls';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { auth: false, searchTerm: '' };
+    this.state = { auth: false, searchTerm: '', tweets: [] };
   }
   componentDidMount() {
-    axios.get('/api/current_user').then(res => {
-      this.setState({ auth: res.data });
+    fetchCurrentUser().then(user => {
+      this.setState({ auth: user });
     });
   }
   searchTwitter = term => {
-    this.setState({ searchTerm: term });
-    console.log('searching twitter', term);
-    axios.get('/api/twitter-search', { term }).then(res => {
-      console.log('got tweets', res);
+    this.setCurrentSearch(term);
+    searchTwitter(term).then(tweets => {
+      console.log('got tweets', tweets);
+      this.setState({ tweets });
     });
+  };
+  setCurrentSearch = term => {
+    this.setState({ searchTerm: term });
   };
   render() {
     return (
