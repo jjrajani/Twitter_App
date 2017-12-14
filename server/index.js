@@ -32,10 +32,10 @@ app.use(bodyParser.json());
 
 /* Twitter Auth Service */
 require('./services/passportTwitter');
-/* Current User Routes */
-require('./routes/currentUserRoutes')(app);
 /* Twitter Auth Routes */
 require('./routes/authTwitterRoutes')(app);
+/* Current User Routes */
+require('./routes/currentUserRoutes')(app);
 /* Twitter Search Routes */
 require('./routes/twitterSearchRoutes')(app);
 
