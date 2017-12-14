@@ -11,6 +11,10 @@ Bar. Searching provides a list of tweets matching the given search parameters.
 * `cd server/client`
 * `npm run start`
 
+##### To run client tests:
+
+* `npm run test`
+
 #### Proxies
 
 * `/api/*: { target: "https://localhost:5000 }`
