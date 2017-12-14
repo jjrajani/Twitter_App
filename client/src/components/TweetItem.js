@@ -1,17 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-const TweetItem = ({ tweet }) => {
-  const {
-    profile_background_color,
-    profile_background_image_url,
-    profile_image_url,
-    screen_name,
-    url
-  } = tweet.user;
-  const { created_at, favorite_count, text } = tweet;
-  const backgroundStyles = () => {
+class TweetItem extends Component {
+  backgroundStyles = () => {
+    const {
+      profile_background_image_url,
+      profile_background_color
+    } = this.props.tweet.user;
     return profile_background_image_url
       ? {
           backgroundImage: `url(${profile_background_image_url})`
@@ -20,29 +16,42 @@ const TweetItem = ({ tweet }) => {
           backgroundColor: `#${profile_background_color}`
         };
   };
-  return (
-    <li style={backgroundStyles()}>
-      <div className="header">
-        {url && (
-          <a href={url} target="_blank">
-            {screen_name}
-          </a>
-        )}
-        {!url && <p>{screen_name}</p>}
-        <p>Tweeting Since {moment(created_at).format('MMMM Do, YYYY')}</p>
-        {favorite_count > 0 && (
-          <p>
-            <i className="fa fa-heart" aria-hidden="true" /> {favorite_count}
-          </p>
-        )}
-      </div>
-      <div className="content">
-        <img src={profile_image_url} alt="User Profile Pic" />
-        <p>{text}</p>
-      </div>
-    </li>
-  );
-};
+  renderHeader = () => {
+    const { url, screen_name } = this.props.tweet.user;
+    return url ? (
+      <a href={url} target="_blank">
+        {screen_name}
+      </a>
+    ) : (
+      <p>{screen_name}</p>
+    );
+  };
+  renderFavorite = () => {
+    const { favorite_count } = this.props.tweet;
+    return favorite_count > 0 ? (
+      <p>
+        <i className="fa fa-heart" aria-hidden="true" /> {favorite_count}
+      </p>
+    ) : null;
+  };
+  render() {
+    const { profile_image_url } = this.props.tweet.user;
+    const { created_at, text } = this.props.tweet;
+    return (
+      <li style={this.backgroundStyles()}>
+        <div className="header">
+          {this.renderHeader()}
+          <p>Tweeting Since {moment(created_at).format('MMMM Do, YYYY')}</p>
+          {this.renderFavorite()}
+        </div>
+        <div className="content">
+          <img src={profile_image_url} alt="User Profile Pic" />
+          <p>{text}</p>
+        </div>
+      </li>
+    );
+  }
+}
 
 TweetItem.propTypes = {
   tweet: PropTypes.shape({
@@ -58,12 +67,5 @@ TweetItem.propTypes = {
     })
   })
 };
-// tweet.created_at;
-// tweet.favorite_count;
-// tweet.text;
-// tweet.user.url;
-// tweet.user.screen_name;
-// tweet.user.profile_background_color;
-// tweet.user.profile_background_img_url;
-// tweet.user.profile_image_url;
+
 export default TweetItem;
