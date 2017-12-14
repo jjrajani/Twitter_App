@@ -13,14 +13,15 @@
     "client": "npm run start --prefix client",
     "//": "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild-client":
-      "npm install --prefix client --only=dev && npm install --prefix client && npm run build --prefix client",
-    "heroku-postbuild-server":
-      "npm install --prefix server --only=dev && npm install --prefix server",
-    "heroku-postbuild":
-      "NPM_CONFIG_PRODUCTION=false npm run heroku-postbuild-client && npm run heroku-postbuild-server"
+    "heroku-postbuild-client": "npm install --prefix client --only=dev && npm install --prefix client && npm run build --prefix client",
+    "heroku-postbuild-server": "npm install --prefix server --only=dev && npm install --prefix server",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run heroku-postbuild-client && npm run heroku-postbuild-server"
   },
-  "keywords": ["Twitter", "Search", "App"],
+  "keywords": [
+    "Twitter",
+    "Search",
+    "App"
+  ],
   "author": "Jenna Rajani",
   "license": "ISC",
   "dependencies": {
@@ -32,6 +33,7 @@
     "forever-agent": "^0.6.1",
     "inflight": "^1.0.6",
     "inherits": "^2.0.3",
+    "is-typedarray": "^1.0.0",
     "isstream": "^0.1.2",
     "json-stringify-safe": "^5.0.1",
     "jsprim": "^2.0.0",
