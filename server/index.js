@@ -39,19 +39,19 @@ require('./routes/authTwitterRoutes')(app);
 /* Twitter Search Routes */
 require('./routes/twitterSearchRoutes')(app);
 
-if (process.env.NODE_ENV === 'production') {
-  // Express server assets
-  app.use(express.static('client/build'));
-  // Serve index.html by default
-  const path = require('path');
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
-
-app.get('/', (req, res) => {
-  res.send('Twitter API Integration');
+// if (process.env.NODE_ENV === 'production') {
+// Express server assets
+app.use(express.static('client/build'));
+// Serve index.html by default
+const path = require('path');
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
+// }
+//
+// app.get('/', (req, res) => {
+//   res.send('Twitter API Integration');
+// });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
