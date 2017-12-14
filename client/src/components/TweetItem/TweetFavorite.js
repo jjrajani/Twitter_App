@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TweetFavorite = ({ favorite_count }) => {
-  return favorite_count > 0 ? (
+const TweetFavorite = ({ favoriteCount }) => {
+  return favoriteCount > 0 ? (
     <p>
-      <i className="fa fa-heart" aria-hidden="true" /> {favorite_count}
+      <i className="fa fa-heart" aria-hidden="true" /> {favoriteCount}
     </p>
   ) : null;
 };
 
 TweetFavorite.propTypes = {
-  favorite_count: PropTypes.number.isRequired
+  favoriteCount: PropTypes.number.isRequired
 };
 
 export default TweetFavorite;

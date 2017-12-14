@@ -26,7 +26,7 @@ class TweetItem extends Component {
         <div className="header">
           <TweetHeader url={url} screenName={screen_name} />
           <p>Tweeting Since {moment(created_at).format('MMMM Do, YYYY')}</p>
-          <TweetFavorite favorite_count={favorite_count} />
+          <TweetFavorite favoriteCount={favorite_count} />
         </div>
         <div className="content">
           <img src={profile_image_url} alt="User Profile Pic" />
