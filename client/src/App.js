@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { SearchBar, TwitterFeed } from './components';
+import axios from 'axios';
 
 class App extends Component {
   constructor(props) {
@@ -10,6 +11,9 @@ class App extends Component {
   searchTwitter = term => {
     this.setState({ searchTerm: term });
     console.log('searching twitter', term);
+    axios.post('/api/twitter-search', { term }).then(res => {
+      console.log('got tweets', res);
+    });
   };
   render() {
     return (
