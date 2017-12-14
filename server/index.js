@@ -10,9 +10,11 @@ app.use(bodyParser.json());
 /* Models */
 require('./models/User');
 /* Twitter Auth Route */
+require('./routes/currentUserRoutes')(app);
+/* Twitter Auth Route */
 require('./routes/authTwitterRoutes')(app);
 /* Twitter Search Route */
-require('./routes/twitterSearchRoute')(app);
+require('./routes/twitterSearchRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   // Express server assets
