@@ -25,6 +25,7 @@
   "author": "Jenna Rajani",
   "license": "ISC",
   "dependencies": {
+    "asynckit": "^0.4.0",
     "aws4": "^1.6.0",
     "combined-stream": "^1.0.5",
     "concurrently": "^3.5.1",
