@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { TweetItem } from './';
 
 class TwitterFeed extends Component {
   render() {
     console.log(this.props.tweets);
-    return <div>{this.props.searchTerm}</div>;
+    const { searchTerm, tweets } = this.props;
+    return (
+      <div>
+        {!searchTerm && <h1>Enter a Search to Get Started</h1>}
+        {searchTerm && <h1>You searched for {searchTerm}</h1>}
+        {tweets && (
+          <ul>
+            {tweets.map(t => {
+              return <TweetItem tweet={t} key={t.id} />;
+            })}
+          </ul>
+        )}
+      </div>
+    );
   }
 }
 
