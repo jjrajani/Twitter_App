@@ -1,7 +1,6 @@
 module.exports = app => {
   /* Get current User */
   app.get('/api/current_user', (req, res) => {
-    console.log('current_user', req.user);
     res.send(req.user);
   });
   //

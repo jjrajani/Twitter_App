@@ -21,7 +21,9 @@ class App extends Component {
     return (
       <div>
         <header>
-          <h1>Twitter Search</h1>
+          <h1>
+            <a href="/">Twitter Search</a>
+          </h1>
           <SearchBar onSubmit={this.searchTwitter} />
           <AuthButton auth={this.state.auth} />
         </header>

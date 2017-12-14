@@ -8,10 +8,15 @@ header {
   h1 {
     letter-spacing: 0.06rem;
     font-weight: 300;
-    color: $twitter_blue;
     font-size: 32px;
     padding: 20px 0;
     width: 100%;
+    a {
+      color: $twitter_blue;
+      &:hover {
+        color: $twitter_blue;
+      }
+    }
   }
   @include breakpoint('max-width', '760px') {
     h1 {
