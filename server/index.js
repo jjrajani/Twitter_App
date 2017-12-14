@@ -5,9 +5,12 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(cors());
-
 app.use(bodyParser.json());
 
+/* Models */
+require('./models/User');
+/* Twitter Auth Route */
+require('./routes/authTwitterRoutes')(app);
 /* Twitter Search Route */
 require('./routes/twitterSearchRoute')(app);
 
