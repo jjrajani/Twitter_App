@@ -4,13 +4,10 @@
   "description": "Twitter App Server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "server": "nodemon index.js"
   },
-  "keywords": [
-    "Twitter",
-    "App",
-    "Server"
-  ],
+  "keywords": ["Twitter", "App", "Server"],
   "author": "Jenna Rajani",
   "license": "ISC",
   "dependencies": {
@@ -24,5 +21,8 @@
     "passport-twitter": "^1.0.4",
     "querystring": "^0.2.0",
     "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.7"
   }
 }
