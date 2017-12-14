@@ -7,9 +7,9 @@ const fetchCurrentUser = async () => {
 };
 
 const searchTwitter = async term => {
-  const res = await axios.get('/api/twitter-search', { term });
+  const res = await axios.post('/api/twitter-search', { term });
 
-  return res.data;
+  return res.data.tweets.statuses;
 };
 
 export { fetchCurrentUser, searchTwitter };

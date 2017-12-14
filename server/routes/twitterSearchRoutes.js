@@ -15,11 +15,13 @@ const searchTwitterURL =
 
 module.exports = app => {
   /* Search Twitter */
-  app.get('/api/twitter-search', (req, res) => {
+  app.post('/api/twitter-search', (req, res) => {
+    console.log('req', req.body);
     let query = {
       q: req.body.term
     };
     let queryString = qs.stringify(query);
+    console.log('queryString', queryString);
     let queryUrl = `${searchTwitterURL}&${queryString}`;
     request.get({ url: queryUrl, oauth, json: true }, (e, r, body) => {
       console.log('twitter search', body);
