@@ -13,7 +13,9 @@ class SearchBar extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit(this.state.term);
+    if (this.state.term.length > 0) {
+      this.props.onSubmit(this.state.term);
+    }
   };
   render() {
     return (
@@ -25,8 +27,9 @@ class SearchBar extends Component {
             value={this.state.term}
             placeholder="Search Twitter"
             onChange={this.handleChange}
+            id="twitterSearchTerm"
           />
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" id="submitTwitterSearch" />
         </form>
       </div>
     );
