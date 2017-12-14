@@ -28,6 +28,7 @@
     "aws4": "^1.6.0",
     "concurrently": "^3.5.1",
     "extend": "^3.0.1",
+    "forever-agent": "^0.6.1",
     "inflight": "^1.0.6",
     "inherits": "^2.0.3",
     "json-stringify-safe": "^5.0.1",
