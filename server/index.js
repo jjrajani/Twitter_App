@@ -44,16 +44,21 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
   // Serve index.html by default
   const path = require('path');
+  const https = require('https');
+  var httpsServer = https.createServer(credentials, app);
+  httpsServer.listen(process.env.PORT || 443, () => {
+    console.log(`https Flowfound VR Player listening on PORT 443`);
+  });
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+} else {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log('App Listening on PORT 5000');
   });
 }
 
 app.get('/', (req, res) => {
   res.send('Twitter API Integration');
-});
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log('App Listening on PORT 5000');
 });
