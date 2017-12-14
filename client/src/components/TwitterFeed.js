@@ -6,10 +6,10 @@ class TwitterFeed extends Component {
   render() {
     const { tweets } = this.props;
     return (
-      <div className="container">
+      <div className="container twitter_feed">
         {!tweets.length && <h2>Enter a Search to Get Started</h2>}
         {tweets && (
-          <ul>
+          <ul className="list">
             {tweets.map(t => {
               return <TweetItem tweet={t} key={t.id} />;
             })}
