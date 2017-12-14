@@ -8,7 +8,7 @@ const AuthButton = ({ auth }) =>
     </a>
   ) : (
     <a className="auth_button" href="/auth/twitter">
-      Login With Twitter
+      Login
     </a>
   );
 
