@@ -4,7 +4,6 @@ import { TweetItem } from './';
 
 class TwitterFeed extends Component {
   render() {
-    console.log(this.props.tweets);
     const { searchTerm, tweets } = this.props;
     return (
       <div>
