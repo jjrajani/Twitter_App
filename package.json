@@ -8,20 +8,19 @@
     "npm": "5.4.2"
   },
   "scripts": {
-    "start": "npm run start --prefix server",
+    "start": "NPM_CONFIG_PRODUCTION=true npm run start --prefix server",
     "server": "npm run server --prefix server",
     "client": "npm run start --prefix client",
     "//": "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild-client": "npm install --prefix client --only=dev && npm install --prefix client && npm run build --prefix client",
-    "heroku-postbuild-server": "npm install --prefix server --only=dev && npm install --prefix server",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run heroku-postbuild-client && npm run heroku-postbuild-server"
+    "heroku-postbuild-client":
+      "npm install --prefix client --only=dev && npm install --prefix client && npm run build --prefix client",
+    "heroku-postbuild-server":
+      "npm install --prefix server --only=dev && npm install --prefix server",
+    "heroku-postbuild":
+      "NPM_CONFIG_PRODUCTION=false npm run heroku-postbuild-client && npm run heroku-postbuild-server"
   },
-  "keywords": [
-    "Twitter",
-    "Search",
-    "App"
-  ],
+  "keywords": ["Twitter", "Search", "App"],
   "author": "Jenna Rajani",
   "license": "ISC",
   "dependencies": {
