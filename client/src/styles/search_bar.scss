@@ -32,13 +32,12 @@
   }
 }
 
-.auth_button {
-  position: absolute;
-  color: $twitter_blue;
-  right: 5%;
-  top: 28px;
-  transition: all 0.25s;
-  &:hover {
-    color: $orange;
+@include breakpoint('min-width', '760px') {
+  .search_bar {
+    width: 70%;
+    justify-content: flex-end;
+    input {
+      margin-bottom: 0;
+    }
   }
 }

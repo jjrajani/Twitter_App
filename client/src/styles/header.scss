@@ -1,0 +1,28 @@
+header {
+  position: relative;
+  background-color: $black;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  h1 {
+    letter-spacing: 0.06rem;
+    font-weight: 300;
+    color: $twitter_blue;
+    font-size: 32px;
+    padding: 20px 0;
+    width: 100%;
+  }
+  @include breakpoint('max-width', '760px') {
+    h1 {
+      text-align: center;
+    }
+  }
+  @include breakpoint('min-width', '760px') {
+    padding: 0 10%;
+    h1 {
+      white-space: nowrap;
+      width: 30%;
+    }
+  }
+}

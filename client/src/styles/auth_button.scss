@@ -1,0 +1,10 @@
+.auth_button {
+  position: absolute;
+  color: $twitter_blue;
+  right: 2.5%;
+  top: 28px;
+  transition: all 0.25s;
+  &:hover {
+    color: $orange;
+  }
+}
