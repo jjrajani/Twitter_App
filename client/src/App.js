@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { SearchBar } from './components';
+import { SearchBar, TwitterFeed } from './components';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { searchTerm: '' };
+  }
+  searchTwitter = term => {
+    this.setState({ searchTerm: term });
+    console.log('searching twitter', term);
+  };
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <SearchBar />
+          <SearchBar onSubmit={this.searchTwitter} />
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <TwitterFeed searchTerm={this.state.searchTerm} />
       </div>
     );
   }
