@@ -15,3 +15,12 @@ This app was build with React and Express.
 ##### To run client tests:
 
 * `npm run test-client`
+
+#### NOTE - you will be required to create your own config variables
+
+Create a config/dev.js file that has the same keys as config/prod.js. Fill in
+the key values with your own variables.
+
+* Twitter App Credentials
+* mLab database
+* cookie key
