@@ -8,7 +8,7 @@
     "npm": "5.4.2"
   },
   "scripts": {
-    "start": "NPM_CONFIG_PRODUCTION=true npm run start --prefix server",
+    "start": "npm run start --prefix server",
     "server": "npm run server --prefix server",
     "client": "npm run start --prefix client",
     "//": "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
