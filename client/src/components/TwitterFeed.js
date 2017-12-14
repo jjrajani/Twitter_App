@@ -14,7 +14,7 @@ class TwitterFeed extends Component {
   render() {
     const { tweets } = this.props;
     return (
-      <div>
+      <div className="container">
         {this.renderHeader()}
         {tweets && (
           <ul>

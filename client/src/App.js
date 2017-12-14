@@ -23,10 +23,11 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <AuthButton auth={this.state.auth} />
+      <div>
+        <header>
+          <h1>Twitter Search</h1>
           <SearchBar onSubmit={this.searchTwitter} />
+          <AuthButton auth={this.state.auth} />
         </header>
         <TwitterFeed
           searchTerm={this.state.searchTerm}

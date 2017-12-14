@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 
 const AuthButton = ({ auth }) =>
   auth ? (
-    <a href="/api/logout">Logout</a>
+    <a className="auth_button" href="/api/logout">
+      Logout
+    </a>
   ) : (
-    <a href="/auth/twitter">Login With Twitter</a>
+    <a className="auth_button" href="/auth/twitter">
+      Login With Twitter
+    </a>
   );
 
 AuthButton.propTypes = {

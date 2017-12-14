@@ -18,13 +18,13 @@ class SearchBar extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="search_bar">
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input
             type="text"
             name="term"
             value={this.state.term}
-            placeholder="Serch Twitter"
+            placeholder="Search Twitter"
             onChange={this.handleChange}
           />
           <input type="submit" value="Submit" />

@@ -1,0 +1,44 @@
+.search_bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input {
+    border: solid $twitter_blue 1px;
+    border-radius: 4px;
+    background-color: $white;
+    padding: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 25px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  input[type='submit'] {
+    color: $white;
+    background-color: $twitter_blue;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.25s;
+    &:hover {
+      background-color: $orange;
+      border-color: $orange;
+    }
+  }
+  // remove yellow autofill background
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px $white inset;
+  }
+}
+
+.auth_button {
+  position: absolute;
+  color: $twitter_blue;
+  right: 5%;
+  top: 28px;
+  transition: all 0.25s;
+  &:hover {
+    color: $orange;
+  }
+}
