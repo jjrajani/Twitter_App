@@ -11,6 +11,8 @@
     }
   },
   "devDependencies": {
+    "axios-mock-adapter": "^1.10.0",
+    "jest-cli": "^21.2.1",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6"
   },
