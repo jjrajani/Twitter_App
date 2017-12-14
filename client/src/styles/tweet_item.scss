@@ -1,21 +1,47 @@
 .tweet.list_item {
-  border: solid red 2px;
+  border-radius: 6px;
+  padding: 10px;
   margin: 30px 0;
   background-size: cover;
-  .header,
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   .content {
+    border-radius: 6px;
     padding: 15px;
-    background: rgba(225, 225, 225, 0.3);
+    margin: 15px;
+    width: calc(80% - 30px);
+    background: rgba(225, 225, 225, 0.5);
   }
-  .header {
-    display: flex;
-    flex-wrap: wrap;
+  .right {
+    margin: 15px;
+    width: calc(20% - 30px);
+    text-align: right;
     img {
       width: 75px;
       height: 75px;
       border-radius: 15px;
     }
+    p,
+    a {
+      color: $twitter_blue;
+      padding: 0 5px 0 0;
+      margin: 10px 0 0 0;
+    }
   }
-  .content {
+  .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: $twitter_blue;
+    align-items: baseline;
+    p {
+      text-align: right;
+      width: 100%;
+      font-size: 14px;
+    }
+    span {
+      width: 50px;
+    }
   }
 }

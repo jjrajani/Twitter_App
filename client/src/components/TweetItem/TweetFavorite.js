@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 const TweetFavorite = ({ favoriteCount }) => {
   return favoriteCount > 0 ? (
-    <p>
+    <span>
       <i className="fa fa-heart" aria-hidden="true" /> {favoriteCount}
-    </p>
+    </span>
   ) : null;
 };
 

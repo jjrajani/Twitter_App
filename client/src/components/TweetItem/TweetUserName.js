@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TweetHeader = ({ url, screenName }) => {
+const TweetUserName = ({ url, screenName }) => {
   return url ? (
     <a href={url} target="_blank">
       {screenName}
     </a>
   ) : (
-    <p>{screenName}</p>
+    <p className="user_name">{screenName}</p>
   );
 };
 
-TweetHeader.propTypes = {
+TweetUserName.propTypes = {
   url: PropTypes.string.isRequired,
   screenName: PropTypes.string.isRequired
 };
 
-export default TweetHeader;
+export default TweetUserName;

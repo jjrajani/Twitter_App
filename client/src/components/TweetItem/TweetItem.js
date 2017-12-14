@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import TweetFavorite from './TweetFavorite';
-import TweetHeader from './TweetHeader';
+import TweetUserName from './TweetUserName';
+import TweetUserImg from './TweetUserImg';
 
 class TweetItem extends Component {
   backgroundStyles = () => {
@@ -19,14 +20,16 @@ class TweetItem extends Component {
     const { created_at, favorite_count, text } = this.props.tweet;
     return (
       <li style={this.backgroundStyles()} className="tweet list_item">
-        <div className="header">
-          <img src={profile_image_url} alt="User Profile Pic" />
-          <TweetHeader url={url} screenName={screen_name} />
-          <p>Tweeting Since {moment(created_at).format('MMMM Do, YYYY')}</p>
-          <TweetFavorite favoriteCount={favorite_count} />
-        </div>
         <div className="content">
           <p>{text}</p>
+        </div>
+        <div className="right">
+          <TweetUserImg src={profile_image_url} url={url} />
+          <TweetUserName url={url} screenName={screen_name} />
+        </div>
+        <div className="bottom">
+          <TweetFavorite favoriteCount={favorite_count} />
+          <p>Tweeted on {moment(created_at).format('MMMM Do, YYYY')}</p>
         </div>
       </li>
     );
