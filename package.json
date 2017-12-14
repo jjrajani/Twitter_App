@@ -33,6 +33,7 @@
     "forever-agent": "^0.6.1",
     "inflight": "^1.0.6",
     "inherits": "^2.0.3",
+    "isstream": "^0.1.2",
     "json-stringify-safe": "^5.0.1",
     "jsprim": "^2.0.0",
     "mime-types": "^2.1.17",
