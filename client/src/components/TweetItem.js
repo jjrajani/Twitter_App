@@ -1,18 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 const TweetItem = ({ tweet }) => {
   const {
     profile_background_color,
-    profile_background_img_url,
+    profile_background_image_url,
     profile_image_url,
     screen_name,
     url
   } = tweet.user;
-  const { created_at, favorite_count, text, user } = tweet;
-  console.log(profile_background_color);
+  const { created_at, favorite_count, text } = tweet;
+  const backgroundStyles = () => {
+    return profile_background_image_url
+      ? {
+          backgroundImage: `url(${profile_background_image_url})`
+        }
+      : {
+          backgroundColor: `#${profile_background_color}`
+        };
+  };
   return (
-    <li>
+    <li style={backgroundStyles()}>
       <div className="header">
         {url && (
           <a href={url} target="_blank">
@@ -20,16 +29,14 @@ const TweetItem = ({ tweet }) => {
           </a>
         )}
         {!url && <p>{screen_name}</p>}
-        <p>Tweeting Since {created_at}</p>
-        <p>heart {favorite_count}</p>
+        <p>Tweeting Since {moment(created_at).format('MMMM Do, YYYY')}</p>
+        {favorite_count > 0 && (
+          <p>
+            <i className="fa fa-heart" aria-hidden="true" /> {favorite_count}
+          </p>
+        )}
       </div>
-      <div
-        className="content"
-        style={{
-          backgroundColor: `#${profile_background_color}`,
-          backgroundImage: `url${profile_background_img_url}`
-        }}
-      >
+      <div className="content">
         <img src={profile_image_url} alt="User Profile Pic" />
         <p>{text}</p>
       </div>
@@ -46,7 +53,7 @@ TweetItem.propTypes = {
       url: PropTypes.string, // //--
       screen_name: PropTypes.string.isRequired, // --
       profile_background_color: PropTypes.string.isRequired,
-      profile_background_img_url: PropTypes.string, //
+      profile_background_image_url: PropTypes.string, //
       profile_image_url: PropTypes.string.isRequired // --
     })
   })
