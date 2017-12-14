@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.scss';
 import { AuthButton, SearchBar, TwitterFeed } from './components';
 import { fetchCurrentUser, searchTwitter } from './utils/serverCalls';
 
