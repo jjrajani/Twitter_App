@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { AuthButton, SearchBar, TwitterFeed } from './components';
-import axios from 'axios';
 import { fetchCurrentUser, searchTwitter } from './utils/serverCalls';
 
 class App extends Component {
@@ -17,7 +16,6 @@ class App extends Component {
   searchTwitter = term => {
     this.setCurrentSearch(term);
     searchTwitter(term).then(tweets => {
-      console.log('got tweets', tweets);
       this.setState({ tweets });
     });
   };
