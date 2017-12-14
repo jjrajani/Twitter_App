@@ -31,7 +31,10 @@ class App extends Component {
           <AuthButton auth={this.state.auth} />
           <SearchBar onSubmit={this.searchTwitter} />
         </header>
-        <TwitterFeed searchTerm={this.state.searchTerm} />
+        <TwitterFeed
+          searchTerm={this.state.searchTerm}
+          tweets={this.state.tweets}
+        />
       </div>
     );
   }
