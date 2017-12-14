@@ -37,6 +37,7 @@
     "mkdirp": "^0.5.1",
     "path-is-absolute": "^1.0.1",
     "sshpk": "^1.13.1",
+    "stringstream": "0.0.5",
     "tough-cookie": "^2.3.3"
   }
 }
